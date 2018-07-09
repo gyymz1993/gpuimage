@@ -1,12 +1,11 @@
 package jp.co.cyberagent.android.gpuimage;
 
 import android.opengl.GLES20;
-import android.util.Log;
 
 /**
  * Created by vashisthg 30/05/14.
  */
-public class GPUImageLevelsFilter extends GPUImageFilter{
+public class GPUImageLevelsFilter extends GPUImageFilter {
 
     private static final String LOGTAG = GPUImageLevelsFilter.class.getSimpleName();
 

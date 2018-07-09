@@ -16,8 +16,6 @@
 
 package jp.co.cyberagent.android.gpuimage;
 
-import java.nio.IntBuffer;
-
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.hardware.Camera.Size;
@@ -25,6 +23,8 @@ import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.util.Log;
+
+import java.nio.IntBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 

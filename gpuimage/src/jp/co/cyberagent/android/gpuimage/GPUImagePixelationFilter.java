@@ -17,6 +17,7 @@
 package jp.co.cyberagent.android.gpuimage;
 
 import android.opengl.GLES20;
+
 /**
  * Applies a grayscale effect to the image.
  */

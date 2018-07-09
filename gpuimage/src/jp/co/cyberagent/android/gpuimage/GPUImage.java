@@ -53,7 +53,7 @@ import java.util.List;
  */
 public class GPUImage {
     private final Context mContext;
-    private final GPUImageRenderer mRenderer;
+    private final BaseGPUImageRenderer mRenderer;
     private GLSurfaceView mGlSurfaceView;
     private GPUImageFilter mFilter;
     private Bitmap mCurrentBitmap;
@@ -71,7 +71,7 @@ public class GPUImage {
 
         mContext = context;
         mFilter = new GPUImageFilter();
-        mRenderer = new GPUImageRenderer(mFilter);
+        mRenderer = new BaseGPUImageRenderer(mFilter);
     }
 
     /**
@@ -304,7 +304,7 @@ public class GPUImage {
             }
         }
 
-        GPUImageRenderer renderer = new GPUImageRenderer(mFilter);
+        BaseGPUImageRenderer renderer = new BaseGPUImageRenderer(mFilter);
         renderer.setRotation(Rotation.NORMAL,
                 mRenderer.isFlippedHorizontally(), mRenderer.isFlippedVertically());
         renderer.setScaleType(mScaleType);
@@ -337,11 +337,11 @@ public class GPUImage {
      * @param listener the listener on which the results will be notified
      */
     public static void getBitmapForMultipleFilters(final Bitmap bitmap,
-            final List<GPUImageFilter> filters, final ResponseListener<Bitmap> listener) {
+                                                   final List<GPUImageFilter> filters, final ResponseListener<Bitmap> listener) {
         if (filters.isEmpty()) {
             return;
         }
-        GPUImageRenderer renderer = new GPUImageRenderer(filters.get(0));
+        BaseGPUImageRenderer renderer = new BaseGPUImageRenderer(filters.get(0));
         renderer.setImageBitmap(bitmap, false);
         PixelBuffer buffer = new PixelBuffer(bitmap.getWidth(), bitmap.getHeight());
         buffer.setRenderer(renderer);
