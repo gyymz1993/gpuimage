@@ -224,6 +224,7 @@ public class GPUImageFilter {
         runOnDraw(new Runnable() {
             @Override
             public void run() {
+               // Log.e("TAG","setColorRed"+arrayValue);
                 GLES20.glUniform3fv(location, 1, FloatBuffer.wrap(arrayValue));
             }
         });
